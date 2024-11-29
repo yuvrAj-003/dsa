@@ -1,7 +1,6 @@
 #include <iostream>
-#include <stack>
-#include <algorithm>
 using namespace std;
+#include <stack>
 
 int pres(char c)
 {
@@ -19,33 +18,31 @@ int pres(char c)
         return -1;
     }
 }
-
-string infix_to_prefix(string str)
+int main()
 {
-    string s = str;
-    reverse(s.begin(), s.end());
-    string res = "";
-    stack<char> st;
+    string s = "(a-b/c)*(a/k-l)";
+
     int n = s.length();
 
+    string temp = "";
+    stack<char> st;
     for (int i = 0; i < n; i++)
     {
-        if (s[i] >= 'a' && s[i] <= 'z' || s[i] >= 'A' && s[i] <= 'Z')
+        if (s[i] >= 'a' && s[i] <= 'z')
         {
-            res += s[i];
-        }
-        else if (s[i] == ')')
-        {
-            st.push(s[i]);
+            temp += s[i];
         }
         else if (s[i] == '(')
         {
-            while (!st.empty() && st.top() != ')')
+            st.push(s[i]);
+        }
+        else if (s[i] == ')')
+        {
+            while (!st.empty() && st.top() != '(')
             {
-                res += st.top();
+                temp += st.top();
                 st.pop();
             }
-
             if (!st.empty())
             {
                 st.pop();
@@ -55,26 +52,20 @@ string infix_to_prefix(string str)
         {
             if (!st.empty() && pres(st.top()) > pres(s[i]))
             {
-                res += st.top();
+                temp += st.top();
                 st.pop();
             }
-
             st.push(s[i]);
         }
     }
+
     while (!st.empty())
     {
-        res += st.top();
+        temp += st.top();
         st.pop();
     }
-    reverse(res.begin(), res.end());
-    return res;
-}
-int main()
-{
-    string st = "(a-b/c)*(a/k-l)";
 
-    string prefix = infix_to_prefix(st);
+    cout << temp << endl;
 
-    cout << prefix << endl;
+    return 0;
 }
