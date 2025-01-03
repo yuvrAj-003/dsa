@@ -1,0 +1,16 @@
+11000 - amd r5 5600x (processor)
+40000 - rtx 4060 ti (gpu)
+6000 - wd ssd 1tb (ssd)
+6000 - msi b550m (motherboard)
+6000 - cooler master ml240l (liquid cooler)
+8000 - gskill 32bg ram (ram)
+3000 - zebronics mercury 240mm (cabinet)
+(80000)
+
+10000 - lg ultragear (monitor)
+6000 - razer blackwidow v2 (keyboard)
+2500 - razer deathadder v2 x hs (mouse)
+3000 - razer blackshark v2 (headset)
+(21500)
+
+= 101500

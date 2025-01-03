@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+<<<<<<< HEAD
+        "utility": "cpp"
+    }
+=======
+        "__node_handle": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+>>>>>>> e652bcd (binary search tree implemented)
+}
