@@ -27,6 +27,7 @@ class Bst{
         }
 
         return root;
+        
     }
 
     void inorder(node* root){
